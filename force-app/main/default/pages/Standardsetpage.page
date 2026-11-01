@@ -1,0 +1,31 @@
+<apex:page standardController="Account" recordSetVar="accs" sidebar="false" extensions="stdSetControllercls">
+    <apex:form >
+        <apex:pageblock >
+            <apex:pageblocktable id="pbt" value="{!accs}" var="a">
+                <apex:column headerValue="Account Name">
+                    <apex:commandLink value="{!a.name}" reRender="op" status="stat">
+                        <apex:param value="{!a.Id}" name="p"/>
+                    </apex:commandLink>
+                </apex:column>
+                <apex:column value="{!a.phone}"/>
+                <apex:column value="{!a.fax}"/>
+            </apex:pageblocktable>
+            
+            <div align="center">
+                <apex:commandLink value="Previous" action="{!previous}" rerender="pbt"/>&nbsp;|&nbsp;
+                <apex:commandLink value="First" action="{!first}"/>&nbsp;|&nbsp;
+                <apex:commandLink value="Last" action="{!last}"/>&nbsp;|&nbsp;
+                <apex:commandLink value="Next" action="{!next}" rerender="pbt" status="stat"/>
+            </div>
+            <apex:outputPanel id="op">
+                <apex:actionStatus id="stat">
+                    <apex:facet name="start">
+                        <apex:image value="{!$Resource.Loading}" style="width:150px;height:150px;position: absolute;margin-top: -170px;margin-left: 250px;"/>
+                    </apex:facet>
+                    
+                </apex:actionStatus>
+            
+            </apex:outputpanel>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

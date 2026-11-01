@@ -1,0 +1,13 @@
+<apex:page controller="sumcls">
+    <apex:form >
+   
+        <apex:pageblock >
+            <apex:inputText value="{!sum}" label="Sum"/> <br> </br>
+            <apex:inputText value="{!discount}" label="Discount" onkeyup="test();"/>
+           <apex:pageBlockButtons >
+                <apex:commandButton action="{!result}" value="result1"/>   
+            </apex:pageBlockButtons>   
+            <apex:outputText value="{!out}" label="this is result" id="go"/>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

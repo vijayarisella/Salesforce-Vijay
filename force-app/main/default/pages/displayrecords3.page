@@ -1,0 +1,15 @@
+<apex:page standardController="Account" recordSetVar="accs" sidebar="false">
+    <apex:form >
+        <apex:pageblock >
+            <apex:dataList value="{!accs}" var="acc" type="circle">
+                {!acc.name}  {!acc.phone}            
+            </apex:dataList>
+            <div align="center">
+                <apex:commandLink value="Previous" action="{!previous}"/>&nbsp;|&nbsp;
+                <apex:commandLink value="First" action="{!first}"/>&nbsp;|&nbsp;
+                <apex:commandLink value="Last" action="{!last}"/>&nbsp;|&nbsp;
+                <apex:commandLink value="Next" action="{!next}"/>
+            </div>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

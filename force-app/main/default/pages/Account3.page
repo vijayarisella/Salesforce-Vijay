@@ -1,0 +1,12 @@
+<apex:page standardController="Account">
+<apex:pageBlock title="{!account.name}">
+<apex:outputPanel id="contactDetails">
+16
+<apex:outputLink value="{! URLFOR($Action.Account.new)}">Create</apex:outputLink>
+<apex:outputLink value="http://developer.salesforce.com/">Click me!</apex:outputLink>
+<apex:outputLink value="{! $Page.form}">I am me!</apex:outputLink>
+Introduction to Visualforce Summary
+
+</apex:outputPanel>
+</apex:pageBlock>
+</apex:page>

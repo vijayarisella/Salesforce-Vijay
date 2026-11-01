@@ -1,0 +1,24 @@
+<apex:page >
+
+<html>
+<head>
+<apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"/>
+
+<script>
+$(document).ready(function(){
+    $("input").click(function(){
+        $("#Carimage").toggle();
+    });
+});
+</script>
+</head>
+<body>
+
+<input type="checkbox"></input >
+
+<img src="{!URLFOR($Resource.DBZip, '/img/1.jpg')}"  id="Carimage" height="100px" width="100px" alt="image"/>
+
+
+</body>
+</html>
+</apex:page>

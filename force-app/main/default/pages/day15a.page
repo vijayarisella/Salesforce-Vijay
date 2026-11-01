@@ -1,0 +1,15 @@
+<apex:page controller="WrapperEx1">
+    
+    <apex:form >
+        <apex:pageblock >
+            <apex:pageblocktable value="{!lstEmp}" var="e">
+                <apex:column value="{!e.name}"/>
+                <apex:column value="{!e.email}"/>
+                <apex:column value="{!e.salary}"/>
+                <apex:column value="{!e.ephone}"/>
+                <apex:column value="{!e.annual}"/>
+            </apex:pageblocktable>
+        </apex:pageblock>
+    </apex:form>
+    
+</apex:page>

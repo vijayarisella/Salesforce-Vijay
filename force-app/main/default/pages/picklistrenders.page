@@ -1,0 +1,16 @@
+<apex:page controller="depPicklistcls">
+    <apex:form >
+        
+        <apex:actionFunction name="call" action="{!fetchData}" rerender="op"/>
+        <apex:selectList value="{!selAccount}" size="1" onchange="call()">
+            <apex:selectOptions value="{!accOptions}"/>
+        </apex:selectList>
+        
+        <apex:commandbutton value="fetch" action="{!fetchData}"/>
+        <apex:outputpanel id="op">
+        <apex:selectList size="1" id="sl2" rendered="{!show}">
+            <apex:selectOptions value="{!conOptions}"/>
+        </apex:selectList>
+        </apex:outputpanel>
+    </apex:form>
+</apex:page>

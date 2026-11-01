@@ -1,0 +1,19 @@
+<apex:page id="pg">
+  <script>
+      function change(){
+          document.getElementById('pg:fm:img').style.width='300px';
+          document.getElementById('pg:fm:img').style.height='300px';
+      }
+      function showImg(){
+          document.getElementById('pg:fm:img').style.visibility='visible';
+      }
+      function hideImg(){
+          document.getElementById('pg:fm:img').style.visibility='hidden';
+      }
+  </script>  
+      <apex:form id="fm">
+          <apex:commandButton value="Show" onclick="showImg(); return false;"/>
+          <apex:commandButton value="Hide" onclick="hideImg(); return false;"/><br/><br/><br/>
+          <apex:image id="img" value="{!$Resource.Logo}" onmouseover="change()" style="height:150px; width:150px; visibility:hidden"/>
+      </apex:form>
+</apex:page>

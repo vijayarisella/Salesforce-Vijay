@@ -1,0 +1,10 @@
+<apex:page controller="WrapperEx2">
+    <apex:form >
+        <apex:pageblock >
+            <apex:pageblocktable value="{!lstwrap}" var="o">
+                <apex:column style="{!IF(o.objType == 'Custom Object','background:green','')}" value="{!o.objName}"/>
+                <apex:column style="background:{!o.color}" value="{!o.objType}"/>
+            </apex:pageblocktable>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

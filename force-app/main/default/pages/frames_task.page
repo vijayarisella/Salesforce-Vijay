@@ -1,0 +1,56 @@
+<apex:page showHeader="false" sidebar="false" >
+ <html>
+<head>
+ <apex:stylesheet value="{!URLFOR($Resource.TestAppCssZip, '/css/bootstrap.min.css')}"/>
+<style>
+header {
+    background-color:black;
+    color:white;
+    text-align:center;
+    padding:5px;     
+}
+nav {
+    line-height:30px;
+    background-color:#70C6C6;
+    height:50%;
+    width:20%;
+    float:left;
+    padding:5px;          
+}
+section {
+line-height:30px;
+    background-color:#dddddd;
+    height:40%;
+    width:60%;
+    float:left;
+    padding:5px;         
+}
+footer {
+    background-color:black;
+    color:white;
+    clear:both;
+    text-align:center;
+    padding:5px;         
+}
+</style>
+</head>
+<body>
+<div class="container">
+<nav>
+<apex:image value="{!URLFOR($Resource.left)}"/>
+</nav>
+<section>
+<apex:image value="{!URLFOR($Resource.main)}" height="20%" width="100%"/>
+</section>
+<nav>
+<apex:image value="{!URLFOR($Resource.left)}" height="20%" width="100%"/>
+
+
+</nav>
+
+</div>
+
+</body>
+</html>
+
+</apex:page>

@@ -1,0 +1,21 @@
+<apex:page >
+<script>
+    function sayHi1(){
+        alert('hi hellooooooooooooo');
+    }
+
+ function sayHi(){
+        alert('hi ');
+    }
+</script>
+    <apex:includeScript value="{!$Resource.MyScript}"/>
+    <apex:form >
+        
+        <apex:outputLabel ondblclick="alert('hi')" >CSC Technologies</apex:outputLabel>
+        
+        <apex:commandButton value="Outline" onclick="sayHi();"/>
+        
+        <apex:commandButton value="External" onclick="sayHi1();"/>        
+    
+    </apex:form>
+</apex:page>

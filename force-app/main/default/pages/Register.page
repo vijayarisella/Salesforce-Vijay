@@ -1,0 +1,30 @@
+<apex:page controller="GlobalCls1"  >
+
+  <apex:form >
+           <apex:pageblock >
+          <apex:inputText value="{!searchText}" />
+          <apex:commandButton value="Search" action="{!doSearch}"/>
+          <br></br>
+                    <h2>Accounts list</h2>
+                        <apex:pageblockTable styleClass="table table-bordered" value="{!Lst1}" var="a" id="AccountPbt">
+                        <apex:column value="{!Lst1}"/>
+                        </apex:pageblockTable> <br></br>
+                        
+                        
+                                                
+                                              
+        
+                    
+                       
+                                           
+                                                                  
+                       
+                       
+                       
+                      
+                       
+      </apex:pageblock>
+   </apex:form>
+ 
+  
+</apex:page>

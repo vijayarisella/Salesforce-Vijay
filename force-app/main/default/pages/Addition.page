@@ -1,0 +1,10 @@
+<apex:page controller="AdditionController">
+    <apex:form >
+    <apex:outputLabel >Enter a value</apex:outputLabel>
+    <apex:inputText value="{!avalue}"/>
+    <apex:outputLabel >Enter b value</apex:outputLabel>
+    <apex:inputText value="{!bvalue}"/>
+    <apex:commandButton action="{!result1}" value="submit" rerender="one"/>
+    <apex:outputLabel id="one">Addition of {!avalue} and {!bvalue} is {!result}</apex:outputLabel>
+    </apex:form>
+</apex:page>

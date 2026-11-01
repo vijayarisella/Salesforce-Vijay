@@ -1,0 +1,20 @@
+<apex:page controller="Example_Get_Set_Method">
+    <apex:outputLabel >Your name is  {!name} </apex:outputLabel>
+</apex:page>
+<!--
+<apex:page standardController="Contact">
+    <apex:form >
+    <apex:pageBlock title="Quick Edit {!contact.name}" >
+        
+        <apex:pageBlockSection title="contact details" columns="1">
+            <apex:inputField value="{!contact.name}" label="myphone number"/>
+            <apex:outputField value="{!contact.name}" label="Names"/>
+            <apex:inputtext value="{!contact.email}"/>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    
+    </apex:form>
+
+</apex:page>
+
+-->

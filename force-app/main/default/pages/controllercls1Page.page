@@ -1,0 +1,20 @@
+<apex:page controller="controllercls1" >
+    <apex:form >
+       
+     <apex:pageblock >
+            <apex:pageBlockSection title="Account Details">
+                <apex:inputText value="{!acc.Name}" label="Account Name"/>
+                <apex:inputText label="Account Phone" value="{!acc.Phone}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Contact Details">
+                <apex:inputText label="Contact Name" value="{!con.lastName}"/>
+                <apex:inputText label="Contact Phone" value="{!con.Phone}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!saverecord}"/>
+                <apex:commandButton value="Save & New" Action="{!savenewrecord}"/>
+                <apex:commandButton value="Cancel" action="{!cancel}"/>
+            </apex:pageBlockButtons>
+        </apex:pageblock>
+    </apex:form>   
+</apex:page>

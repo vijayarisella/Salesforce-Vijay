@@ -1,0 +1,25 @@
+<apex:page id="pg">
+<script>
+    function validate(){
+        var uname = document.getElementById('pg:fm:un').value;
+        console.log(uname);
+        var pswd = document.getElementById('pg:fm:pw').value;
+        console.log(pswd);
+        if(uname == '' || pswd == ''){
+            alert('Please check your credentials');
+            document.getElementById('pg:fm:un').value=''; // to make the value empty after shwoing error
+            return false;
+        }
+        else
+            return true;
+        
+    }
+</script>
+    <apex:form id="fm">
+        Username <apex:inputtext id="un" /><br/>
+        Password <apex:inputSecret id="pw" /><br/>
+        <apex:commandButton value="Login" onclick=" return validate();" action="https://www.google.com"/>
+        <input type="button" value="Logi" onclick="window.open('https://www.google.com')"/>
+        <apex:commandLink value="Register" action="https://www.gmail.com"/>
+    </apex:form>
+</apex:page>

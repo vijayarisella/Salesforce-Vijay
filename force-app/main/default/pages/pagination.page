@@ -1,0 +1,35 @@
+<apex:page controller="opportunityListCon">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockTable value="{!Opportunities}" var="o">
+                <apex:column value="{!o.name}"/>
+                <apex:column value="{!o.closedate}"/>
+            </apex:pageBlockTable>
+           
+            <apex:commandButton rendered="{!setCon.hasPrevious}" value="first" action="{!setCon.first}"/>
+            <apex:commandButton rendered="{!setCon.hasPrevious}" value="Previous" action="{!setCon.previous}"/>
+            <apex:outputText rendered="{!(setCon.pageNumber * setCon.pageSize) < setCon.ResultSize}" value="{!setCon.pageNumber * setCon.pageSize} Of {!setCon.ResultSize}"></apex:outputText>
+            <apex:outputText rendered="{!(setCon.pageNumber * setCon.pageSize) >= setCon.ResultSize}" value="{!setCon.ResultSize} Of {!setCon.ResultSize}"></apex:outputText>
+           
+            <apex:commandButton rendered="{!setCon.hasNext}" value="next" action="{!setCon.next}"/>
+           
+            <apex:commandButton rendered="{!setCon.hasNext}" value="last" action="{!setCon.last}"/>
+        </apex:pageBlock>
+        <apex:pageBlock >
+            <apex:pageBlockTable value="{!contact}" var="o1">
+                <apex:column value="{!o1.name}"/>
+                <apex:column value="{!o1.id}"/>
+            </apex:pageBlockTable>
+           
+            <apex:commandButton rendered="{!setCon1.hasPrevious}" value="first" action="{!setCon1.first}"/>
+            <apex:commandButton rendered="{!setCon1.hasPrevious}" value="Previous" action="{!setCon1.previous}"/>
+            <apex:outputText rendered="{!(setCon1.pageNumber * setCon1.pageSize) < setCon1.ResultSize}" value="{!setCon1.pageNumber * setCon1.pageSize} Of {!setCon1.ResultSize}"></apex:outputText>
+            <apex:outputText rendered="{!(setCon1.pageNumber * setCon1.pageSize) >= setCon1.ResultSize}" value="{!setCon1.ResultSize} Of {!setCon1.ResultSize}"></apex:outputText>
+           
+            <apex:commandButton rendered="{!setCon1.hasNext}" value="next" action="{!setCon1.next}"/>
+           1
+            <apex:commandButton rendered="{!setCon1.hasNext}" value="last" action="{!setCon1.last}"/>
+        </apex:pageBlock>
+
+    </apex:form>
+</apex:page>

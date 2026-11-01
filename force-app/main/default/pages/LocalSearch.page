@@ -1,0 +1,61 @@
+<apex:page controller="recordscls"  >
+<!--contentType="application/vnd.ms-word #accs.doc"-->
+<script>
+    function check(){
+      var res  =`;
+    }
+    function hide(id)
+    {alert(id);
+        if(id=='accid')
+        {
+           $('#accid').show();
+           $('#oppid').hide();
+           $('#conid').hide();
+        }
+       if(id=='conid')
+        {
+           $('#accid').hide();
+           $('#oppid').hide();
+           $('#conid').show();
+        }
+        if(id=='oppid')
+        {
+           $('#accid').hide();
+           $('#oppid').show();
+           $('#conid').hide();
+        }
+   
+    }
+
+</script>
+
+  <apex:form >
+      
+      <apex:pageblock >
+          <apex:inputText value="{!searchText}" />
+          <apex:commandButton value="Account Search" action="{!doSearch}"  onclick="hide('accid'); return false;"/>
+                 
+                   
+                   
+                    
+          <apex:pageblockTable value="{!lst}" id="accid" var="a">
+                            <apex:column headerValue="Account Names" >
+                  <apex:commandLink value="{!a.name}" action="/{!a.Id}"/>
+              </apex:column>
+              <apex:column value="{!a.phone}"/>
+              <apex:column value="{!a.fax}"/>
+           <apex:commandLink value="Previous" action="{!previous}" rerender="pbt"/>  
+          </apex:pageblockTable>
+            <apex:commandButton rendered="{!setCon.hasPrevious}" value="first" action="{!setCon.first}"/>
+            <apex:commandButton rendered="{!setCon.hasPrevious}" value="Previous" action="{!setCon.previous}"/>
+            <apex:outputText rendered="{!(setCon.pageNumber * setCon.pageSize) < setCon.ResultSize}" value="{!setCon.pageNumber * setCon.pageSize} Of {!setCon.ResultSize}"></apex:outputText>
+            <apex:outputText rendered="{!(setCon.pageNumber * setCon.pageSize) >= setCon.ResultSize}" value="{!setCon.ResultSize} Of {!setCon.ResultSize}"></apex:outputText>
+           
+            <apex:commandButton rendered="{!setCon.hasNext}" value="next" action="{!setCon.next}"/>
+           
+            <apex:commandButton rendered="{!setCon.hasNext}" value="last" action="{!setCon.last}"/>
+
+         
+     </apex:pageblock>
+  </apex:form>
+</apex:page>

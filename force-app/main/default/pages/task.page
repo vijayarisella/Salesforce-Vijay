@@ -1,0 +1,36 @@
+<apex:page controller="TaskListController">
+
+ <apex:form id="searchForm">
+  <apex:PageBlock mode="edit">     
+     <apex:actionSupport action="{!refreshGrid}">
+        <apex:param name="firstParam" assignTo="{!selectedPage}" value="" />
+     </apex:actionSupport>
+       <apex:dynamicComponent componentValue="{!myCommandButtons}"/>        
+       <apex:outputPanel id="myPanel">
+       <apex:pageMessages id="theMessages" />
+      </apex:outputPanel>
+    <apex:pageblockSection id="searchBlockSection">
+    <apex:pageBlockSectionItem id="searchBlockSectionItem">
+      <apex:outputLabel >Keyword</apex:outputLabel>
+        <apex:panelGroup >
+            <apex:inputtext id="searchTextBox" value="{!searchText}"> </apex:inputtext>
+            <apex:commandButton Id="btnSearch" action="{!Search}" rerender="renderBlock" status="status" title="Search" value="Search">                    </apex:commandButton>
+        </apex:panelGroup>
+    </apex:pageBlockSectionItem>
+ </apex:pageblockSection>
+
+<apex:actionStatus id="status" startText="Searching... please wait..."/>     
+<apex:pageBlocksection id="renderBlock" >
+
+    <apex:pageblocktable value="{!SearchResults}" var="t" rendered="{!NOT(ISNULL(SearchResults))}" align="center">
+        <apex:outputLink value="/{!t.Id}">{!t.Subject}</apex:outputLink>
+        <apex:column value="{!t.Subject}"/>
+        <apex:outputLink value="/{!t.Id}">{!t.Status}</apex:outputLink>
+        <apex:column value="{!t.Status}"/>
+        <apex:facet name="footer">Showing Page # {!pageNumber} of {!totalPages}</apex:facet>
+    </apex:pageblocktable>    
+    </apex:pageBlocksection>
+   </apex:pageblock>
+  </apex:form>
+   <apex:enhancedlist type="Activity" height="800" rowsPerPage="50"   customizable="False"/>
+  </apex:page>

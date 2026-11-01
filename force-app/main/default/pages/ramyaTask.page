@@ -1,0 +1,31 @@
+<apex:page standardController="Account" extensions="oppclass1">
+    <apex:form >
+     <apex:pageblock >
+       
+        <apex:pageBlockSection title="opportunity Overview section">
+             <apex:pageBlockTable value="{!Results}" var="ar">
+       <apex:column headerValue="Stage Name" value="{!ar.StageName}"/>
+       <apex:column headerValue="Count" value="{!ar.intr}"/>
+     </apex:pageBlockTable>
+
+              
+           
+</apex:pageBlockSection> 
+</apex:pageblock>
+        <apex:pageblock >
+       
+        <apex:pageBlockSection title="opportunity detail section">
+            <apex:pageblockTable value="{!lst}" var="opp" cellpadding="4" cellspacing="5">
+                <apex:column headerValue="Opportunity name" value="{!opp.name}"/>
+                <apex:column headerValue="Probability" value="{!opp.probability}"/>
+                <apex:column headerValue="Stagename" value="{!opp.stagename}"/>
+                <apex:column headerValue="Amount" value="{!opp.amount}"/>
+               
+
+ <apex:column headerValue="owner" value="{!opp.ownerid}"/>
+                 </apex:pageblockTable>
+                 
+</apex:pageBlockSection>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

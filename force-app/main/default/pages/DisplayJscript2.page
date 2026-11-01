@@ -1,0 +1,23 @@
+<apex:page id="pg">
+<style>
+    .labelcls{
+        color:red;
+        font-size:24px;
+        font-family:gigi;
+    }
+</style>
+<script>
+function assign(){
+  document.getElementById('pg:fm:ol').className='labelcls';
+//  document.getElementById('lb1').style.color='red';
+}
+function unassign(){
+  document.getElementById('pg:fm:ol').className='';
+//  document.getElementById('lb1').style.color='red';
+}
+</script>
+    <apex:form id="fm" >
+        <apex:outputLabel id="ol" onmouseover="assign()" onmouseout="unassign()" >CSC Technologies</apex:outputLabel>
+    </apex:form>
+    <label id="lb1">CSC Technologies</label>
+</apex:page>

@@ -1,0 +1,45 @@
+<apex:page controller="GlobalCls" docType="html-5.0"  >
+
+  <apex:form >
+           <apex:pageblock >
+          
+          <!--<apex:inputText value="{!searchText}" />  -->
+          
+          <apex:selectList value="{!searchText}" multiselect="false" size="1">
+                  <apex:selectOption itemValue="a" itemLabel="a"/>
+                  <apex:selectOption itemValue="test" itemLabel="test"/>
+                  <apex:selectOption itemValue="United Kingdom" itemLabel="UK"/>
+           </apex:selectList>   
+        
+        <!--    <apex:pageBlockSection >
+            <apex:pageBlockSectionItem >
+                Date: <apex:input type="date" value="{!dat}"/>
+               
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+              
+                Date: <apex:input type="date" value="{!dat1}"/>
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>  -->
+           
+          
+            
+            
+          <apex:commandButton value="Search" action="{!doSearch}"/>
+          <br></br>
+                    <h2>Accounts list</h2>
+                        <apex:pageblockTable styleClass="table table-bordered" value="{!lst}" var="a" id="AccountPbt">
+                        <apex:column headerValue="Accounts name" >
+                              <apex:commandLink value="{!a.name}" action="/{!a.Id}"/>
+                      </apex:column>
+                      <apex:column value="{!a.phone}"/>
+                      <apex:column value="{!a.fax}"/>
+                       </apex:pageblockTable> <br></br>
+                        
+                     
+                   
+      </apex:pageblock>
+   </apex:form>
+ 
+  
+</apex:page>

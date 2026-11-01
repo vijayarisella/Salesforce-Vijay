@@ -1,0 +1,27 @@
+<apex:page standardController="Account" recordSetVar="accs" sidebar="false">
+    <apex:form >
+        <apex:pageblock >
+            <table border="1" cellspacing="5" cellpadding="4" >
+                <tr style="background:red; color:white">
+                    <th>Account Name</th>
+                    <th>Account Phone</th>
+                    <th>Account Fax</th>
+                </tr>
+            <apex:repeat value="{!accs}" var="acc">
+                <tr>
+                    <td>{!acc.name}</td>
+                    <td>{!acc.Phone}</td>
+                    <td>{!acc.fax}</td>
+                </tr>        
+            </apex:repeat>
+
+            </table>
+            <div align="center">
+                <apex:commandLink value="Previous" action="{!previous}"/>&nbsp;|&nbsp;
+                <apex:commandLink value="First" action="{!first}"/>&nbsp;|&nbsp;
+                <apex:commandLink value="Last" action="{!last}"/>&nbsp;|&nbsp;
+                <apex:commandLink value="Next" action="{!next}"/>
+            </div>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

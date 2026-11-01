@@ -1,0 +1,201 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" >
+   <html>
+  <head>
+      
+      <apex:stylesheet value="{!URLFOR($Resource.bootstrap, '/css/bootstrap.min.css')}" />    
+  </head>
+  <body>
+  <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li id='lione' class="active"><a onclick="display('div1')" href="#">Overview</a></li>
+            <li id='litwo'><a onclick="display('div2')" href="#">Reports</a></li>
+            <li id='li3'><a onclick="display('div3')" href="#">Analytics</a></li>
+            <li id='li4'><a onclick="display('div4')" href="#">Export</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 ">
+          <div class="table-responsive" id="div1" >
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Header</th>
+                  <th>Header</th>
+                  <th>Header</th>
+                  <th>Header</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1,001</td>
+                  <td>Lorem</td>
+                  <td>ipsum</td>
+                  <td>dolor</td>
+                  <td>sit</td>
+                </tr>
+                <tr>
+                  <td>1,002</td>
+                  <td>amet</td>
+                  <td>consectetur</td>
+                  <td>adipiscing</td>
+                  <td>elit</td>
+                </tr>
+                <tr>
+                  <td>1,003</td>
+                  <td>Integer</td>
+                  <td>nec</td>
+                  <td>odio</td>
+                  <td>Praesent</td>
+                </tr>
+                <tr>
+                  <td>1,003</td>
+                  <td>libero</td>
+                  <td>Sed</td>
+                  <td>cursus</td>
+                  <td>ante</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table-responsive" id="div2" style="display:none;">
+138            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Header</th>
+                  <th>Header</th>
+                  <th>Header</th>
+                  <th>Header</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1,001</td>
+                  <td>Lorem</td>
+                  <td>ipsum</td>
+                  <td>dolor</td>
+                  <td>sit</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <div class="table-responsive" id="div2" style="display:none;">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Header</th>
+                  <th>Header</th>
+                  <th>Header</th>
+                  <th>Header</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1,001</td>
+                  <td>Lorem</td>
+                  <td>ipsum</td>
+                  <td>dolor</td>
+                  <td>sit</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <div class="table-responsive" id="div3" style="display:none;">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Header</th>
+                  <th>Header</th>
+                  <th>Header</th>
+                  <th>Header</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Lorem</td>
+                  <td>ipsum</td>
+                  <td>dolor</td>
+                  <td>sit</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+         <div class="table-responsive" id="div4" style="display:none;">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Header</th>
+                  <th>Header</th>
+                  <th>Header</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>ipsum</td>
+                  <td>dolor</td>
+                  <td>sit</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>  
+          
+        </div>
+      </div>
+    </div>  
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+     <script>
+     function display(id){
+        if(id=='div1'){
+            $("#lione").addClass("active");
+            $("#litwo").removeClass("active");
+            $("#li3").removeClass("active");
+            $("#li4").removeClass("active");
+            $("#div1").show();
+            $("#div2").hide();
+            $("#div3").hide();
+            $("#div4").hide();
+        }
+        if(id=='div2'){
+            $("#lione").removeClass("active");
+            $("#litwo").addClass("active");
+            $("#li3").removeClass("active");
+            $("#li4").removeClass("active");
+            $("#div2").show();
+            $("#div1").hide();
+            $("#div3").hide();
+            $("#div4").hide();
+        }
+        if(id=='div3'){
+            $("#lione").removeClass("active");
+            $("#litwo").removeClass("active");
+            $("#li3").addClass("active");
+            $("#li4").removeClass("active");
+            $("#div2").hide();
+            $("#div1").hide();
+            $("#div3").show();
+            $("#div4").hide();
+        }
+        if(id=='div4'){
+            $("#lione").removeClass("active");
+            $("#litwo").removeClass("active");
+            $("#li3").removeClass("active");
+            $("#li4").addClass("active");
+            $("#div2").hide();
+            $("#div1").hide();
+            $("#div3").hide();
+            $("#div4").show();
+        }
+     }
+     </script>
+  </body>
+</html>
+</apex:page>

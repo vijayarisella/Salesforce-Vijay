@@ -1,0 +1,54 @@
+<apex:page showHeader="false" sidebar="false" standardController="Account" recordSetVar="accs"   >
+ <html lang="en">
+        <head>
+            <meta charset="utf-8" />
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <meta name="description" content=""/>
+            <meta name="author" content=""/>
+            <link rel="icon" href="favicon.ico"></link>
+            <title>Justified Nav Template for Bootstrap</title>
+            <apex:stylesheet value="{!URLFOR($Resource.boostrapcustom)}"/>
+            <apex:stylesheet value="{!URLFOR($Resource.TestAppCssZip, '/css/justified-nav.css')}"/>
+            <script src="{!URLFOR($Resource.TestAppJs, '/js/ie-emulation-modes-warning.js')}"></script>
+        </head>
+        <body>
+        
+            <div class="container">
+                <div class="masthead">
+                    <h3 class="text-muted">Test Application</h3>
+                    <nav>
+                        <ul class="nav nav-justified">
+                            <li ><a href="https://c.ap1.visual.force.com/apex/TestAppHome" >Home</a></li>
+                            <li class="active"><a href="#" >Accounts</a></li>
+                            <li><a href="#">Opportunities</a></li>
+                            <li><a href="#" >Leads</a></li>
+                        </ul>
+                    </nav>
+                </div> 
+                <br></br>               
+                     <apex:form >
+                        <apex:pageblock >
+                            <apex:pageblockTable styleClass="table table-striped" value="{!accs}" var="acc">
+                                <apex:column StyleClass="success" headerValue="account name" value="{!acc.name}"/>
+                                <apex:column StyleClass="success" value="{!acc.name}"/>
+                                <apex:column StyleClass="success" value="{!acc.fax}"/>                
+                            </apex:pageblockTable>
+                             
+                             <footer class="footer">
+                            
+                               <div class="btn btn-info btn-lg col-xs-1 ">  <apex:commandLink action="{!previous}"><span class="glyphicon glyphicon-chevron-left text-left  "></span>Previous  </apex:commandLink></div> 
+                               <div class="col-xs-9"></div>
+                               <!-- <apex:commandLink action="{!first}"><div class="btn btn-info btn-lg "><span class="glyphicon glyphicon-chevron-left "></span>First </div></apex:commandLink>
+                                <apex:commandLink action="{!last}"><div class="btn btn-info btn-lg "><span class="glyphicon glyphicon-chevron-left "></span>Last </div> </apex:commandLink>-->
+                                <div class="btn btn-info btn-lg col-xs-1 "><apex:commandLink action="{!next}">Next <span class="glyphicon glyphicon-chevron-right  "></span></apex:commandLink></div>
+                            
+                         </footer></apex:pageblock>
+                    </apex:form>                             
+                </div> <!-- /container -->
+                
+                <script src="{!URLFOR($Resource.TestAppJs, '/js/ie10-viewport-bug-workaround.js')}"></script>
+        </body>
+</html>
+
+</apex:page>

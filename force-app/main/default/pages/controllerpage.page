@@ -1,0 +1,60 @@
+<apex:page controller="recordscls">
+<!--contentType="application/vnd.ms-word #accs.doc"-->
+<script>
+    function check(){
+      var res  = confirm('Are you sure you want to del this record?');
+      return res;
+    }
+
+</script>
+
+  <apex:form >      
+      <apex:pageblock >
+          <apex:inputText value="{!searchText}" />
+          <apex:commandButton value="Search" action="{!doSearch}"/>
+          <apex:commandLink value="View All" action="{!doviewAll}"/>
+          <apex:commandButton value="Export" action="/apex/pdfpage"/>
+          
+          <apex:commandLink value="A" action="{!doSearchByAlpha}" style="margin-left:100px">
+              <apex:param value="A" assignTo="{!alpha}" name="a"/>
+          </apex:commandLink>
+          &nbsp;|&nbsp;
+          <apex:commandLink value="B" action="{!doSearchByAlpha}">
+              <apex:param value="B" assignTo="{!alpha}" name="b"/>
+          </apex:commandLink>
+          &nbsp;|&nbsp;
+          <apex:commandLink value="C" action="{!doSearchByAlpha}">
+          <apex:param value="C" assignTo="{!alpha}" name="c"/>
+          </apex:commandLink>
+          
+          &nbsp;|&nbsp;
+          <apex:commandLink value="D" action="{!doSearchByAlpha}"/>&nbsp;|&nbsp;
+          <apex:commandLink value="E" action="{!doSearchByAlpha}"/>&nbsp;|&nbsp;
+          <apex:commandLink value="F" action="{!doSearchByAlpha}">
+          <apex:param value="F" assignTo="{!alpha}" name="f"/>
+          </apex:commandLink>
+          
+          &nbsp;|&nbsp;
+          <apex:commandLink value="G" action="{!doSearchByAlpha}">
+              <apex:param value="G" assignTo="{!alpha}" name="g"/>
+          </apex:commandLink>
+          &nbsp;|&nbsp;
+          <apex:commandLink value="H" action="{!doSearchByAlpha}"/>
+          
+          <apex:pageblockTable value="{!lst}" var="a">
+              <apex:column headerValue="Action">
+                    <apex:commandLink value="Edit" action="/{!a.id}/e"/>
+                    <apex:commandLink value="Del" onclick="return check();" action="{!deleteRecord}">
+                        <apex:param value="{!a.Id}" assignTo="{!recId}" name="e"/>
+                    </apex:commandLink> 
+              </apex:column>
+              <apex:column headerValue="Account Names" >
+                  <apex:commandLink value="{!a.name}" action="/{!a.Id}"/>
+              </apex:column>
+              <apex:column value="{!a.phone}"/>
+              <apex:column value="{!a.fax}"/>
+              <apex:column value="{!a.billingcountry}"/>
+          </apex:pageblockTable>
+      </apex:pageblock>
+  </apex:form>
+</apex:page>

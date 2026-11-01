@@ -1,0 +1,22 @@
+<apex:page controller="WrapperEx3">
+    <apex:form >
+    <apex:pageMessages />   
+        <apex:pageblock >
+            <apex:actionFunction name="check" action="{!selectAllrecords}" rerender="pbt"/>
+            <apex:pageblocktable value="{!lstwrap}" var="c" id="pbt">
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:inputcheckbox value="{!selectAll}" onclick="check()" />
+                    </apex:facet>
+                    <apex:inputCheckbox value="{!c.ischeck}"/>
+                </apex:column>
+                <apex:column value="{!c.con.name}"/>
+                <apex:column value="{!c.con.email}"/>
+                <apex:column value="{!c.con.phone}"/>
+            </apex:pageblocktable>
+            <apex:pageblockbuttons >
+                <apex:commandButton value="Delete" action="{!deleteRecords}"/>
+            </apex:pageblockbuttons>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

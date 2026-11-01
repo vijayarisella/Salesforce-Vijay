@@ -1,0 +1,30 @@
+<apex:page controller="picklistcls">
+    <apex:form >
+        <apex:actionFunction name="call" action="{!show}" />
+        <apex:selectList value="{!selValue}" size="1" onchange="call()">
+            <apex:selectOPtion itemvalue="123" itemLabel="ABC"></apex:selectOPtion>
+            <apex:selectOPtion itemvalue="234" itemLabel="DEF"></apex:selectOPtion>
+            <apex:selectOPtion itemvalue="345" itemLabel="GHI"></apex:selectOPtion>
+            <apex:selectOPtion itemvalue="456" itemLabel="JKL"></apex:selectOPtion>
+        </apex:selectList>
+        <apex:commandButton value="Show" action="{!show}"/>
+        <apex:outputLabel id="ol" >You have selected {!selValue}</apex:outputLabel>
+        
+        <apex:selectRadio >
+            <apex:selectOPtion itemvalue="123" itemLabel="ABC"></apex:selectOPtion>
+            <apex:selectOPtion itemvalue="234" itemLabel="DEF"></apex:selectOPtion>
+            <apex:selectOPtion itemvalue="345" itemLabel="GHI"></apex:selectOPtion>
+            <apex:selectOPtion itemvalue="456" itemLabel="JKL"></apex:selectOPtion>
+        </apex:selectRadio>
+        
+         <apex:selectcheckboxes >
+            <apex:selectOPtion itemvalue="123" itemLabel="ABC"></apex:selectOPtion>
+            <apex:selectOPtion itemvalue="234" itemLabel="DEF"></apex:selectOPtion>
+            <apex:selectOPtion itemvalue="345" itemLabel="GHI"></apex:selectOPtion>
+            <apex:selectOPtion itemvalue="456" itemLabel="JKL"></apex:selectOPtion>
+        </apex:selectcheckboxes>
+        
+        
+        
+    </apex:form>
+</apex:page>

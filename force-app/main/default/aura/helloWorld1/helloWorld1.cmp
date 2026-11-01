@@ -1,0 +1,57 @@
+<aura:component controller='OpportunitiesServerSideController'>
+    
+    
+    
+   <!--  <aura:attribute name="opportunities" type="Opportunity[]"/>
+    
+    <ui:button label="Get Opportunities" press="{!c.getOpps}"/>
+    <aura:iteration var="opportunity" items="{!v.opportunities}">
+    	<p>{!opportunity.Name} : {!opportunity.CloseDate}</p>
+    </aura:iteration>-->
+    
+    
+     <aura:attribute name="opportunities" type="Opportunity[]" />
+    <ui:button label="getOptys" press="{!c.getOptys}"/>
+   	<aura:iteration var="opportunity" items="{!v.opportunities}">
+        <p>{!opportunity.Name}</p>
+        
+    </aura:iteration>
+    
+    
+    
+    
+    
+    
+    <aura:attribute name="numbers" type='list'/>
+    <ui:button label="submit" press="{!c.getNumbers}"/>
+    <aura:iteration  items="{!v.numbers}" var='numbers' >
+    {!numbers.value}<br></br>
+    
+    </aura:iteration>
+    
+    
+    
+    <h1>
+         This is my first Hello World Program!
+    </h1>
+    <aura:attribute name="First_name" type="boolean" default="" />
+    <aura:attribute name="Last_Name" type="string" default="Arisella"/>
+    {!v.First_name} {!v.Last_Name}
+    <br></br>
+    <ui:inputtext  value="{!v.First_name}" label="Enter First name"/>
+    <aura:if isTrue="{!v.First_name}">
+        <ui:button label="submit" />
+        
+    <aura:set attribute="else">
+        <br></br>
+        This is else part of the loop
+        </aura:set>
+    </aura:if>  
+    is a browser of desktop: {!$Browser.isTablet}  <br> </br>
+    {!$Browser.formFactor}<br></br>
+    {!$Locale.language}<br></br>
+{!$Locale.timezone}<br></br>
+{!$Locale.numberFormat}<br></br>
+{!$Locale.currency}<br></br>
+
+</aura:component>

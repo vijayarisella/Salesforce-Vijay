@@ -1,0 +1,17 @@
+<apex:page controller="SOSLDemoController">
+    <apex:form >
+    <apex:commandbutton value="Click for SOSL records" action="{!SOSLDemo_Method}"/>
+    <apex:pageblock title="accounts list">
+    <apex:pageblocktable value="{!Acc_List}" var="acc">
+    <apex:column value="{!acc.name}"/>
+    <apex:column value="{!acc.id}"/>
+    </apex:pageblocktable>
+    </apex:pageblock>
+    <apex:pageblock title="Opprtunity list">
+    <apex:pageblocktable value="{!Opp_List}" var="opp">
+    <apex:column value="{!opp.name}"/>
+    <apex:column value="{!opp.id}"/>
+    </apex:pageblocktable>
+    </apex:pageblock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,7 @@
+<apex:page controller="Examples">
+<apex:form >
+<apex:inputtext id="two" value="{!Account.name}"/>
+<apex:commandbutton value="click" action="{!doSave}"/>
+  <!-- <apex:outputLabel id="one">{!age}</apex:outputLabel>-->
+ </apex:form>
+</apex:page>

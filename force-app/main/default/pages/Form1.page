@@ -1,0 +1,9 @@
+<apex:page sidebar="false" showHeader="false">
+    <apex:form >
+        Username <apex:inputtext /><br/>
+        Password <apex:inputSecret /><br/>
+        <apex:commandButton value="Login" action="https://www.google.com"/>
+        <input type="button" value="Logi" onclick="window.open('https://www.google.com','_self')"/>
+        <apex:commandLink value="Register" action="https://www.gmail.com"/>
+    </apex:form>
+</apex:page>

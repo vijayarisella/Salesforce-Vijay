@@ -1,0 +1,5 @@
+<apex:page standardController="account">
+    <apex:form >
+    <apex:inputText value="{!account.industry}"/>
+    </apex:form>
+</apex:page>

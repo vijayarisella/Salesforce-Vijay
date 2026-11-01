@@ -1,0 +1,32 @@
+<apex:page controller="multiselectDemo">
+    <apex:form >
+        <apex:outputPanel >
+            <apex:outputLabel >select value</apex:outputLabel>
+            <apex:selectList value="{!SelectedColor}" size="6" multiselect="true">
+                <apex:selectOptions value="{!listOfColors}"/>
+                <apex:actionSupport action="{!DummyAction}" reRender="PBS1" event="onchange"/>
+            </apex:selectList>
+        </apex:outputPanel> 
+    </apex:form>
+    <apex:pageBlock title="select colors">
+        <apex:pageblockSection id="PBS1">
+            <apex:pageBlockSectionItem >{!SelectedColor}
+            </apex:pageBlockSectionItem>
+        </apex:pageblockSection>
+    </apex:pageBlock>
+</apex:page>
+
+<!--
+    String strSobjects = null;
+        for(int i=0; i<listOfColors.size(); i++){
+        
+            If(strSobjects == null)
+                {
+                strSobjects = listOfColors[i];
+                }
+            else
+                {
+                strSobjects = strSobjects  + “ OR ”+lstSobject[i];
+                }
+        }
+       -->

@@ -1,0 +1,57 @@
+<apex:page controller="SearchAndSortWithFilterCls"   docType="html-5.0"  id="AccPage">
+  <apex:form id="AccForm">
+             <apex:pageblock id="AccBlock">
+                <apex:inputcheckbox value="{!SortCheckbox}"  id="myCheck"/>
+                <apex:selectList value="{!searchText}" multiselect="false" size="1">
+                      <apex:selectOption itemValue="vijay" itemLabel="vijay"/>
+                      <apex:selectOption itemValue="test" itemLabel="test"/>
+                      <apex:selectOption itemValue="a" itemLabel="a"/>
+                </apex:selectList>   <br></br>
+               
+                <!-- <apex:pageBlockSection >-->
+                <apex:inputcheckbox value="{!SortCheckboxDate}"  id="myCheck1"/>
+                    <!-- <apex:pageBlockSectionItem >-->
+                        Date: <apex:input type="date" value="{!dat}" id="dat"/>
+                    <!--</apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem > -->
+                          Date: <apex:input type="date" value="{!dat1}" id="dat1"/>
+                     <!--</apex:pageBlockSectionItem>-->
+                 <!--</apex:pageBlockSection> -->
+                      
+          <apex:commandButton value="Search" action="{!doSearch}" onclick="IsEmptyDate()" />
+          <br></br>
+          <br></br>
+            <h2>Accounts list</h2>
+            <apex:pageblockTable styleClass="table table-bordered" value="{!lst}" var="a" id="AccountPbt">
+          <apex:column headerValue="Accounts name"  onclick="sort()">
+            <apex:commandLink value="{!a.name}" action="/{!a.Id}"/>
+            </apex:column>
+            <apex:column value="{!a.phone}" onkeypress="sort()" onclick="sort()" />
+             <apex:column value="{!a.fax}"/>
+            </apex:pageblockTable> <br></br>
+            
+            <apex:commandLink value="next" action="{!next}" rerender="AccountPbt"  title="First Page" / >
+            <apex:commandLink value="First" action="{!first}"/>&nbsp;|&nbsp;
+            <apex:commandLink value="Last" action="{!last}"/>&nbsp;|&nbsp;
+            <apex:commandLink value="Previous" action="{!Previous}" rerender="AccountPbt" status="stat"/><br></br>
+             
+      </apex:pageblock>
+   </apex:form>
+   <script>
+   function IsEmptyDate(){
+     var inputDate = document.getElementById("{!$Component.AccPage.AccForm.AccBlock.dat}");
+     var inputDate1 = document.getElementById("{!$Component.AccPage.AccForm.AccBlock.dat1}");
+     
+     var inputCheckBoxDate = document.getElementById("{!$Component.AccPage.AccForm.AccBlock.myCheck1}");
+    
+                 if(inputCheckBoxDate.checked == true && (inputDate.value == '' || inputDate1.value == '') )
+                 {
+                    alert('Please enter the date, Date should not be empty when you select date checkbox');
+                 } 
+        }
+        function sort(){
+                            alert('Please enter the date');
+        }
+  </script> 
+  
+</apex:page>

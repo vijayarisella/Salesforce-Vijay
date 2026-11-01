@@ -1,0 +1,17 @@
+<apex:page controller="recordscls" renderAs="pdf">
+<!--contentType="application/vnd.ms-word #accs.doc"-->
+
+  <apex:form >
+      
+      <apex:pageblock >
+          <apex:pageblockTable value="{!lst}" var="a"> //page block table takes only list as input
+              <apex:column headerValue="Account Names" >
+                  <apex:commandLink value="{!a.name}" action="/{!a.Id}"/>
+              </apex:column>
+              <apex:column value="{!a.phone}"/>
+              <apex:column value="{!a.fax}"/>
+              <apex:column value="{!a.billingcountry}"/>
+          </apex:pageblockTable>
+      </apex:pageblock>
+  </apex:form>
+</apex:page>

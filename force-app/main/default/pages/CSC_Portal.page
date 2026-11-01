@@ -1,0 +1,38 @@
+<apex:page sidebar="false" showHeader="true" standardStylesheets="false" >
+    <html>
+        <head>
+        <title>Bootstrap 101 Template</title>
+        <!-- <link href="{!URLFOR($Resource.bootcss, 'bootstrap.min.css')}" rel="stylesheet" media="screen"></link>
+        <apex:stylesheet value="{!URLFOR($Resource.bootstrap, '/css/bootstrap.min.css')}"/>
+        -->
+        <apex:stylesheet value="{!URLFOR($Resource.bootcss, 'bootstrap.min.css')}"/>
+       <!--  <apex:stylesheet value="https://ap1.salesforce.com/resource/1424410453000/css"/>-->
+        </head>
+    <body>
+        <div class="container">
+            <img src="{!URLFOR($Resource.bootimage,'head.gif')}" class="img-thumbnail center-block" alt="Cinque Terre" width="800" height="400"/>
+            <b><p class="text-center text-primary" > Welcome to OurSpace, the CSC India Intranet landing page.</p>
+            <p class="text-center text-primary ">Please click on any link below to proceed to the site of your choice.</p></b>
+            <br></br>
+                <div class="row">
+                    <div class="col-md-8 ">
+                        <a href="#" target="black"><img src="{!URLFOR($Resource.bootimage,'link1.gif')}" class="img-thumbnail" alt="Cinque Terre" width="400" height="150"/>  </a>
+                    </div>
+                    <div class="col-md-4 ">        
+                        <a href="#" target="black"><img src="{!URLFOR($Resource.bootimage,'link2.gif')}" class="img-thumbnail" alt="Cinque Terre" width="400" height="150"/>  </a>
+                    </div>
+                    <div class="col-md-8">        
+                        <a href="#" target="black"><img src="{!URLFOR($Resource.bootimage,'link3.gif')}" class="img-thumbnail" alt="Cinque Terre" width="400" height="150"/>  </a>    
+                    </div>
+                    
+                    <div class="col-md-4" target="black">        
+                        <a href="#" target="black"><img src="{!URLFOR($Resource.bootimage,'link4.JPG')}" class="img-thumbnail" alt="Cinque Terre" width="400" height="150"/>  </a>
+                    </div>
+                </div>  
+                <apex:outputLabel ondblclick="alert('hi')" value="ddfdf"></apex:outputLabel>/>           
+        </div>      
+        <script src="http://code.jquery.com/jquery.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+    </body>
+    </html>
+</apex:page>

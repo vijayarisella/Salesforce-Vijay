@@ -1,0 +1,9 @@
+<apex:page StandardController="Account">
+  <!-- Begin Default Content REMOVE THIS -->
+  <p>Hello {! $User.FirstName}!</p>
+<p>You are viewing the {! account.name}! account.   {! account.Owner.LastName}</p>
+  <h1>Congratulations</h1>sdfsadfsaf
+  <p>Here's the Ticker Symbol field: {! account.TickerSymbol}</p>
+  This is your new Page
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

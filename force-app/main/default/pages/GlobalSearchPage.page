@@ -1,0 +1,97 @@
+<apex:page controller="GlobalCls" docType="html-5.0"  >
+
+  <apex:form >
+           <apex:pageblock >
+          
+          <!--<apex:inputText value="{!searchText}" />  -->
+          
+          <apex:selectList value="{!searchText}" multiselect="false" size="1">
+                  <apex:selectOption itemValue="a" itemLabel="a"/>
+                  <apex:selectOption itemValue="test" itemLabel="test"/>
+                  <apex:selectOption itemValue="United Kingdom" itemLabel="UK"/>
+           </apex:selectList>   
+        
+     <apex:pageBlockSection >
+            <apex:pageBlockSectionItem >
+                Date: <apex:input type="date" value="{!dat}"/>
+               
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+              
+                Date: <apex:input type="date" value="{!dat1}"/>
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection> 
+           
+     
+            
+          <apex:commandButton value="Search" action="{!doSearch}"/>
+          <br></br>
+                    <h2>Accounts list</h2>
+                        <apex:pageblockTable styleClass="table table-bordered" value="{!lst}" var="a" id="AccountPbt">
+                        <apex:column headerValue="Accounts name" >
+                              <apex:commandLink value="{!a.name}" action="/{!a.Id}"/>
+                      </apex:column>
+                      <apex:column value="{!a.phone}"/>
+                      <apex:column value="{!a.fax}"/>
+                       </apex:pageblockTable> <br></br>
+                        
+                        <apex:commandLink value="next" action="{!next}" rerender="AccountPbt"  title="First Page"  >
+                        <!--<apex:commandLink value="A" action="{!doSearchByAlpha}" style="margin-left:100px">
+                          <apex:param value="A" assignTo="{!alpha}" name="a"/>-->
+                          <apex:param value="{!searchText}"  assignTo="{!searchText}" name="a"/>-->
+                          </apex:commandLink>
+
+                                                
+                        <apex:commandLink value="First" action="{!first}"/>&nbsp;|&nbsp;
+                        <apex:commandLink value="Last" action="{!last}"/>&nbsp;|&nbsp;
+                        <apex:commandLink value="Next" action="{!Previous}" rerender="AccountPbt" status="stat"/><br></br>
+
+                          <h2>Contacts list</h2>
+                               <apex:pageblockTable value="{!Conlst}" var="b">
+                          <apex:column headerValue="Contact Names" >
+                              <apex:commandLink value="{!b.name}" action="/{!b.Id}"/>
+                      </apex:column>
+                      <apex:column value="{!b.phone}"/>
+                      <apex:column value="{!b.name}"/>
+                       </apex:pageblockTable> <br></br>
+
+        
+                     <h2>Opportunity list</h2>
+                   <apex:pageblockTable value="{!Opplst}" var="c">
+                            <apex:column headerValue="Opportunity Names" >
+                              <apex:commandLink value="{!c.name}" action="/{!c.Id}"/>
+                      </apex:column>
+                      <apex:column value="{!c.name}"/>
+                      <apex:column value="{!c.NumberOfDays__c}"/>
+                       </apex:pageblockTable> <br></br>
+
+                       
+                    <h2>Leads list</h2>
+                            <apex:pageblockTable value="{!Leadlst}" var="d">
+                            <apex:column headerValue="Lead Names" >
+                              <apex:commandLink value="{!d.name}" action="/{!d.Id}"/>
+                      </apex:column>
+                      <apex:column value="{!d.name}"/>
+                      <apex:column value="{!d.AnnualRevenue}"/>
+                       </apex:pageblockTable> <br></br>
+
+                       
+                        <h2>Products list</h2>
+                           <apex:pageblockTable value="{!Prolst}" var="pro">
+                            <apex:column headerValue="Product Names" >
+                              <apex:commandLink value="{!pro.name}" action="/{!pro.Id}"/>
+                      </apex:column>
+                      <apex:column value="{!pro.name}"/>
+                      <apex:column value="{!pro.ProductCode}"/>
+                       </apex:pageblockTable>
+                                          
+                       
+                       
+                       
+                      
+                       
+      </apex:pageblock>
+   </apex:form>
+ 
+  
+</apex:page>

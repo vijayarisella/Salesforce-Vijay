@@ -1,0 +1,21 @@
+<apex:page controller="ArrayExapmleController">
+ <apex:form >
+ <apex:pageBlock >
+     <apex:pageBlockTable value="{!myvalue}" var="a">
+     <apex:column value="{!a}"/>
+     <apex:column value="{!name}"/>
+     </apex:pageBlockTable>
+     <apex:outputLabel >{!name}</apex:outputLabel>     
+ </apex:pageBlock>
+ 
+  <apex:pageBlock >
+     <apex:pageBlockTable value="{!result}" var="a1">
+     <apex:column value="{!a1}"/>
+     <apex:column value="{!name}"/>
+     </apex:pageBlockTable>
+     
+     
+ </apex:pageBlock>
+ 
+ </apex:form>
+</apex:page>

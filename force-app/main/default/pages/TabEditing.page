@@ -1,0 +1,13 @@
+<apex:page >
+     <apex:tabpanel switchtype="client">
+         <apex:tab label="JNTU">
+         
+         fgysdfgfffffffffffffff
+         </apex:tab>
+         <apex:tab label="OU">
+         fdddddddddddddddddddddddd
+          </apex:tab>
+          <apex:tab label="SVU">
+          </apex:tab>
+     </apex:tabpanel>
+</apex:page>

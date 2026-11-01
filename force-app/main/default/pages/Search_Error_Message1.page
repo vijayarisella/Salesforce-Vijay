@@ -1,0 +1,18 @@
+<apex:page controller="new10">
+    <apex:form >
+        <apex:pageBlock title="data">
+        <apex:pagemessages ></apex:pagemessages>
+        Enter the name: <apex:inputText value="{!str}"/>
+        
+        <apex:commandButton value="Button" action="{!data}"/>
+        
+        <apex:pageblockTable value="{!abc}" var="x">
+        <apex:column value="{!x.Name}"/>
+        
+        </apex:pageblockTable>
+        
+        </apex:pageBlock>
+    </apex:form>
+    
+
+</apex:page>

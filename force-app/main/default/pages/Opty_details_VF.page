@@ -1,0 +1,20 @@
+<apex:page standardController="Opportunity"  tabStyle="Opportunity">
+    <apex:pageBlock >
+        <apex:pageBlockSection title="Opportunity Information">
+            <apex:outputField value="{!opportunity.name}" />
+            <apex:outputField value="{!opportunity.amount}"/>
+            <apex:outputField value="{!opportunity.closeDate}"/>
+            <apex:outputLink value="https://www.salesforce.com" id="theLink" target="_blank">www.salesforce.com</apex:outputLink>
+            <apex:form >
+            
+            <apex:outputLabel value="opportunity name" for="theCheckbox"/>
+            <apex:inputtext value="{!opportunity.name}" id="theCheckbox"/>
+            </apex:form>
+            <apex:outputText style="font-style:italic" value="This is {1} text with {1}.">
+       <apex:param value="my"/>
+       <apex:param value="arguments"/>
+    </apex:outputText>
+    
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:page>

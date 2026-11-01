@@ -1,0 +1,7 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"
+                			 access="global" >
+	<div>Hello, THis is my first Lighining component Couser</div>
+     <aura:attribute name="displayText" type='string' default='Vijaykumar'/>
+    <p> {!v.displayText}</p>
+     
+</aura:component>

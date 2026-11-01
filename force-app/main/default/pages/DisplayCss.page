@@ -1,0 +1,13 @@
+<apex:page >
+<style>
+    .labelclass{
+        color: blue;
+        font-size:24px;
+        font-family:Tahoma;
+    }
+</style>
+    <apex:stylesheet value="{!$Resource.Styling}"/>
+    <apex:outputLabel style="color:red; font-size:24px;font-family:gigi">Example for Inline Styling</apex:outputLabel>
+    <apex:outputLabel styleClass="labelclass" style="color:green">Example for Outline Styling</apex:outputLabel>
+    <apex:outputLabel styleclass="labelcls1">Example for External Styling</apex:outputLabel>
+</apex:page>

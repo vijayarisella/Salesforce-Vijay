@@ -1,0 +1,5 @@
+<apex:page controller="SingleEmailMessageController">
+    <apex:form >
+    <apex:commandButton value="Click here to send email" action="{!SendEmailMethod}"/>
+    </apex:form>
+</apex:page>

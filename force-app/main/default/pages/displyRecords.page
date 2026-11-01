@@ -1,0 +1,17 @@
+<apex:page standardController="Account" recordSetVar="accs" sidebar="false">
+    <apex:form >
+        <apex:pageblock >
+            <apex:dataTable value="{!accs}" var="acc">
+                <apex:column headerValue="account name" value="{!acc.name}"/>
+                <apex:column value="{!acc.phone}"/>
+                <apex:column value="{!acc.fax}"/>                
+            </apex:dataTable>
+            <div align="center">
+                <apex:commandLink value="Previous" action="{!previous}"/>&nbsp;|&nbsp;
+                <apex:commandLink value="First" action="{!first}"/>&nbsp;|&nbsp;
+                <apex:commandLink value="Last" action="{!last}"/>&nbsp;|&nbsp;
+                <apex:commandLink value="Next" action="{!next}"/>
+            </div>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

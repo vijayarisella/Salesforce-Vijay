@@ -1,0 +1,30 @@
+<apex:page controller="controllercls" action="{!autoRun}">
+    <apex:form >
+        <apex:pageblock >
+            <apex:pageBlockSection title="Account Details">
+                <apex:inputText value="{!accName}" label="Account Name"/>
+                <apex:inputText label="Account Phone" value="{!accPhone}"/>
+
+
+        <apex:selectList size="1" label="Active" value="{!SelectValue}">
+
+            <apex:selectOptions value="{!statusOptions}"/>
+
+       </apex:selectList>
+
+
+
+
+        </apex:pageBlockSection>
+            <apex:pageBlockSection title="Contact Details">
+                <apex:inputText label="Contact Name" value="{!conName}"/>
+                <apex:inputText label="Contact Phone" value="{!conPhone}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+            <apex:commandButton value="Run Report" action="{!saverecord}"/>
+                 <apex:commandButton value="Cancel" action="{!cancel}"/>
+             <apex:commandButton value="Export" action="{!export}"/>
+            </apex:pageBlockButtons>
+        </apex:pageblock>
+    </apex:form>   
+</apex:page>

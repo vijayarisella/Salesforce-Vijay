@@ -1,0 +1,38 @@
+<apex:page sidebar="false" showHeader="false" standardStylesheets="false" >
+<html >
+<head>
+  <title>Bootstrap Example</title>
+ <!--  <apex:stylesheet value="{!URLFOR($Resource.bootstrap, '/bootstrap.min.css')}"/>-->
+  <apex:stylesheet value="https://ap1.salesforce.com/resource/1424410453000/css"/>
+ 
+</head>
+<body>
+
+<div class="container">
+  <div class="jumbotron">
+    <h1>My First Bootstrap Page</h1>
+    <p>Resize this responsive page to see the effect!</p> 
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>Column 1</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Column 2</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Column 3</h3>        
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+
+</apex:page>
